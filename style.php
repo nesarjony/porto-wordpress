@@ -6,23 +6,37 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+$skin = cs_get_option('skin');  
+$primary_color = cs_get_option("color_primary_$skin");
+$link_hover_color = cs_get_option("color_link_hover_$skin");
+$border_radius = cs_get_option('border-shape');
+$border_radius_custom = cs_get_option('border-shape-custom');
 
+
+$topbar_bg = cs_get_option('color_topbar_bg');
+$topbar_color = cs_get_option('color_topbar_color');
+$topbar_border = cs_get_option('color-topbar-border');
+
+$topbar_menu_bg = cs_get_option('color-topbar-menu-bg');
+$topbar_menu_bg_hover = cs_get_option('color-topbar-menu-bg-hover');
+$topbar_menu_border = cs_get_option('color-topbar-menu-border');
+$topbar_menu_text_color = cs_get_option('color-topbar-menu-text-color');
 ?>
-
+ 
 a {
 	color: <?= $primary_color ?>;
 }
 
 a:hover {
-	color: <?php echo $skinOptions['a_hover'] ?>; 
+	color: <?= $link_hover_color ?>; 
 }
 
 a:focus { 
-	color: <?php echo $skinOptions['a_hover'] ?>;
+	color: <?= $link_hover_color ?>;
 }
-
+ 
 a:active {
-	color: <?php echo $skinOptions['a_active'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 html .heading-primary,
@@ -47,7 +61,7 @@ html .text-color-secondary {
 }
 
 html .heading.heading-secondary h1,
-html .heading.heading-secondary h2,
+html .heading.heading-secondary h2, 
 html .heading.heading-secondary h3,
 html .heading.heading-secondary h4,
 html .heading.heading-secondary h5,
@@ -189,15 +203,15 @@ html ul.nav-pills-primary a {
 }
 
 html ul.nav-pills-primary a:hover {
-	color: <?php echo $skinOptions['a_hover'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 html ul.nav-pills-primary a:focus {
-	color: <?php echo $skinOptions['a_hover'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 html ul.nav-pills-primary a:active {
-	color: <?php echo $skinOptions['a_active'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 html ul.nav-pills-primary > li.active > a {
@@ -376,11 +390,11 @@ html .label-light {
 }
 
 .btn-link:hover {
-	color: <?php echo $skinOptions['a_hover'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 .btn-link:active {
-	color: <?php echo $skinOptions['a_active'] ?>;
+	color: <?= $link_hover_color ?>;
 }
 
 html .btn-primary {
@@ -391,20 +405,20 @@ html .btn-primary {
 }
 
 html .btn-primary:hover {
-	border-color: <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .btn-primary:active,
 html .btn-primary:focus,
 html .btn-primary:active:hover,
 html .btn-primary:active:focus {
-	border-color: <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .btn-primary.dropdown-toggle {
-	border-left-color: <?php echo $skinOptions['a_active'] ?>;
+	border-left-color: <?= $link_hover_color ?>;
 }
 
 html .btn-primary[disabled] {
@@ -427,8 +441,8 @@ html .btn-primary-scale-2 {
 }
 
 html .btn-primary-scale-2:hover {
-	border-color: <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?> #ef1710;
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> #ef1710;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .btn-primary-scale-2:active,
@@ -791,8 +805,8 @@ html .btn-borders.btn-primary:focus {
 
 html .btn-borders.btn-primary:hover:hover,
 html .btn-borders.btn-primary:focus:hover {
-	border-color: <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .btn-borders.btn-primary:hover:active,
@@ -803,13 +817,13 @@ html .btn-borders.btn-primary:hover:active:hover,
 html .btn-borders.btn-primary:focus:active:hover,
 html .btn-borders.btn-primary:hover:active:focus,
 html .btn-borders.btn-primary:focus:active:focus {
-	border-color: <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .btn-borders.btn-primary:hover.dropdown-toggle,
 html .btn-borders.btn-primary:focus.dropdown-toggle {
-	border-left-color: <?php echo $skinOptions['a_active'] ?>;
+	border-left-color: <?= $link_hover_color ?>;
 }
 
 html .btn-borders.btn-primary:hover[disabled],
@@ -1092,8 +1106,8 @@ body.dark .pagination > .active > a {
 
 .pagination > .active > a:hover,
 body.dark .pagination > .active > a:hover {
-	border-color: <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 .pagination > .active > a:active,
@@ -1104,13 +1118,13 @@ body.dark .pagination > .active > a:focus,
 body.dark .pagination > .active > a:active:hover,
 .pagination > .active > a:active:focus,
 body.dark .pagination > .active > a:active:focus {
-	border-color: <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 .pagination > .active > a.dropdown-toggle,
 body.dark .pagination > .active > a.dropdown-toggle {
-	border-left-color: <?php echo $skinOptions['a_active'] ?>;
+	border-left-color: <?= $link_hover_color ?>;
 }
 
 .pagination > .active > a[disabled],
@@ -1205,7 +1219,7 @@ html .progress-bar-light {
 
 html section.section-primary {
 	background-color: <?= $primary_color ?> !important;
-	border-color: <?php echo $skinOptions['a_active'] ?> !important;
+	border-color: <?= $link_hover_color ?> !important;
 }
 
 html section.section-primary h1,
@@ -1460,7 +1474,7 @@ section.page-header h1 {
 }
 
 section.page-header.custom-product {
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	background-color: <?= $link_hover_color ?>;
 	border-top-color: #f3534d;
 }
 
@@ -1814,20 +1828,20 @@ html .inverted-light {
 }
 
 .owl-carousel .owl-nav [class*="owl-"]:hover {
-	border-color: <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_hover'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 .owl-carousel .owl-nav [class*="owl-"]:active,
 .owl-carousel .owl-nav [class*="owl-"]:focus,
 .owl-carousel .owl-nav [class*="owl-"]:active:hover,
 .owl-carousel .owl-nav [class*="owl-"]:active:focus {
-	border-color: <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?> <?php echo $skinOptions['a_active'] ?>;
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	border-color: <?= $link_hover_color ?> <?= $link_hover_color ?> <?= $link_hover_color ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 .owl-carousel .owl-nav [class*="owl-"].dropdown-toggle {
-	border-left-color: <?php echo $skinOptions['a_active'] ?>;
+	border-left-color: <?= $link_hover_color ?>;
 }
 
 .owl-carousel .owl-nav [class*="owl-"][disabled] {
@@ -2868,11 +2882,11 @@ html[dir="rtl"] #header .tip.skin:before {
 
 	html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li a {
 		color: #ffffff;
-		border-bottom-color: <?php echo $skinOptions['a_hover'] ?>;
+		border-bottom-color: <?= $link_hover_color ?>;
 	}
 
 	html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li:hover > a {
-		background: <?php echo $skinOptions['a_hover'] ?>;
+		background: <?= $link_hover_color ?>;
 	}
 
 	html #header .header-nav-main nav > ul > li.dropdown-full-color.dropdown-primary .dropdown-menu li.dropdown-submenu > a:after {
@@ -3118,63 +3132,71 @@ html[dir="rtl"] #header .tip.skin:before {
 		background: #ffffff;
 		color: #777777;
 	}
-}
+} 
+
 html #header .header-top.header-top-color { 
-	background: <?php echo $skinOptions['topbar_bg'] ?>;
-	border-top-color: <?php echo $skinOptions['topbar_border'] ?>;
+	<?php if(isset($topbar_bg)): ?>  
+	background: <?= $topbar_bg ?>;	
+	<?php endif ?>
+	<?php if(isset($topbar_border)): ?>  
+	border-top-color: <?= $topbar_border ?>;
+	<?php endif ?> 	
+} 
+
+html #header .header-top.header-top-color p,
+html #header .header-top.header-top-color span,
+html #header .header-top.header-top-color p a{ 
+	<?php if(isset($topbar_color)): ?> 	 
+	color: <?= $topbar_color ?>;
+	<?php endif ?> 		
+} 
+html #header .header-top.header-top-color .header-nav-top ul > li > a{
+<?php if(isset($topbar_color)): ?> 
+	color: <?= $topbar_color ?>;
+	<?php endif ?>
 }
-html #header .header-top.header-top-primary {
-	background: <?= $primary_color ?>;
-	border-top-color: <?php echo $skinOptions['a_active'] ?>;
+html #header .header-top.header-top-color .header-nav-top ul > li.open > a,
+html #header .header-top.header-top-color .header-nav-top ul > li > a:hover{
+<?php if(isset($topbar_menu_bg)): ?> 
+	background: <?= $topbar_menu_bg ?>; 
+	<?php endif ?>
+	<?php if(isset($topbar_menu_text_color)): ?> 
+	color:<?= $topbar_menu_text_color ?> 
+	<?php endif ?>
 }
 
-html #header .header-top.header-top-color .header-nav-top ul > li.open > a {
-	background: <?php echo $skinOptions['topbar_a_hover'] ?>;
-}
-
-html #header .header-top.header-top-color .header-nav-top ul > li > a:hover,
-html #header .header-top.header-top-color .header-nav-top ul > li.open > a:hover,
-html #header .header-top.header-top-color .header-nav-top ul > li > a:focus,
-html #header .header-top.header-top-color .header-nav-top ul > li.open > a:focus {
-	background: <?php echo $skinOptions['topbar_a_hover'] ?>;
+html #header .header-top.header-top-color .header-nav-top ul > li > a:hover { 
+<?php if(isset($topbar_menu_text_color)): ?> 
+	color:<?= $topbar_menu_text_color ?> 
+	<?php endif ?>
 }
 
 html #header .header-top.header-top-color .dropdown-menu {
-	background: <?php echo $skinOptions['topbar_bg'] ?>;
-	border-color: <?php echo $skinOptions['topbar_border'] ?>;
+<?php if(isset($topbar_menu_bg)): ?>
+	background: <?= $topbar_menu_bg ?>;
+<?php endif ?>
+<?php if(isset($topbar_menu_border)): ?>
+	border-color: <?= $topbar_menu_border ?>;
+<?php endif ?>
+<?php if(isset($topbar_menu_text_color)): ?>
+	color:<?= $topbar_menu_text_color ?> !important;
+<?php endif ?>
 }
 
-html #header .header-top.header-top-primary .dropdown-menu a:hover,
-html #header .header-top.header-top-primary .dropdown-menu a:focus {
-	background: #f78a87 !important;
+html #header .header-top.header-top-color .dropdown-menu a{
+	color:<?= $topbar_menu_text_color ?> !important;
 }
 
-
-html #header .header-top.header-top-dark {
-	background: #2e353e;
-	border-top-color: #23282f;
+html #header .header-top.header-top-color .dropdown-menu a:hover,
+html #header .header-top.header-top-color .dropdown-menu a:focus {
+<?php if(isset($topbar_menu_bg_hover)): ?>
+	background: <?= $topbar_menu_bg_hover  ?> !important;
+<?php endif ?>
+<?php if(isset($topbar_color)): ?>
+	color:<?= $topbar_color ?> !important;
+<?php endif ?>
 }
 
-html #header .header-top.header-top-dark .header-nav-top ul > li.open > a {
-	background: #39424d;
-}
-
-html #header .header-top.header-top-dark .header-nav-top ul > li > a:hover,
-html #header .header-top.header-top-dark .header-nav-top ul > li.open > a:hover,
-html #header .header-top.header-top-dark .header-nav-top ul > li > a:focus,
-html #header .header-top.header-top-dark .header-nav-top ul > li.open > a:focus {
-	background: #39424d;
-}
-
-html #header .header-top.header-top-dark .dropdown-menu {
-	background: #39424d;
-	border-color: #39424d;
-}
-
-html #header .header-top.header-top-dark .dropdown-menu a:hover,
-html #header .header-top.header-top-dark .dropdown-menu a:focus {
-	background: #444e5b !important;
-}
 
 html #header .header-top.header-top-light {
 	background: #ffffff;
@@ -3245,19 +3267,19 @@ html #header .header-top.header-top-light .dropdown-menu a:focus {
 }
 
 .testimonial blockquote {
-	background: <?php echo $skinOptions['a_hover'] ?>;
+	background: <?= $link_hover_color ?>;
 }
 
 .testimonial .testimonial-arrow-down {
-	border-top-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-top-color: <?= $link_hover_color ?>;
 }
 
 html .testimonial-primary blockquote {
-	background: <?php echo $skinOptions['a_hover'] ?>;
+	background: <?= $link_hover_color ?>;
 }
 
 html .testimonial-primary .testimonial-arrow-down {
-	border-top-color: <?php echo $skinOptions['a_hover'] ?>;
+	border-top-color: <?= $link_hover_color ?>;
 }
 
 html .testimonial-secondary blockquote {
@@ -3868,7 +3890,7 @@ html .featured-boxes-full-scale > [class*="col-"]:nth-child(1) .featured-box-ful
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(2) .featured-box-full-primary {
-	background-color: <?php echo $skinOptions['a_active'] ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(3) .featured-box-full-primary {
@@ -3876,7 +3898,7 @@ html .featured-boxes-full-scale > [class*="col-"]:nth-child(3) .featured-box-ful
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(4) .featured-box-full-primary {
-	background-color: <?php echo $skinOptions['a_hover'] ?>;
+	background-color: <?= $link_hover_color ?>;
 }
 
 html .featured-boxes-full-scale > [class*="col-"]:nth-child(5) .featured-box-full-primary {
@@ -4178,8 +4200,8 @@ html .slider-container .tp-caption-overlay-opacity-light {
 }
 
 #footer .footer-ribbon:before {
-	border-right-color: #ef1710;
-	border-left-color: #ef1710;
+	border-right-color: <?= $link_hover_color ?>;
+	border-left-color: <?= $link_hover_color ?>;
 }
 
 #footer.light h1,
@@ -4204,8 +4226,8 @@ html .slider-container .tp-caption-overlay-opacity-light {
 }
 
 #footer.color .footer-copyright {
-	background: <?php echo $skinOptions['a_active'] ?>;
-	border-top-color: <?php echo $skinOptions['a_active'] ?>;
+	background: <?= $link_hover_color ?>;
+	border-top-color: <?= $link_hover_color ?>;
 }
 
 html #footer.color-primary {
@@ -4222,8 +4244,8 @@ html #footer.color-primary .footer-ribbon:before {
 }
 
 html #footer.color-primary .footer-copyright {
-	background: <?php echo $skinOptions['a_active'] ?>;
-	border-top-color: <?php echo $skinOptions['a_active'] ?>;
+	background: <?= $link_hover_color ?>;
+	border-top-color: <?= $link_hover_color ?>;
 }
 
 html #footer.color-secondary {
@@ -4323,7 +4345,7 @@ html #footer.color-light .footer-copyright {
 html.boxed .body {
 	border-top-color: <?= $primary_color ?>;
 }
-<?php if($skinOptions['border_radius']): ?>
+<?php if($border_radius == 'disable' || $border_radius == 'custom'): ?>
 .img-rounded,
 .img-thumbnail,
 .img-thumbnail img,
@@ -4386,14 +4408,14 @@ pre,
 .pagination > li:last-child > span,
 .pagination-lg > li:last-child > a,
 .pagination-lg > li:last-child > span {
-	border-radius: 0;
+	border-radius: <?php echo $border_radius == "custom" ? $border_radius_custom : 0 ?>px;
 }
 
 @media (min-width: 768px) {
 	.nav-tabs.nav-justified > li > a,
 	.nav-tabs-justified > li > a,
 	.navbar {
-		border-radius: 0;
+		border-radius: <?php echo $border_radius == "custom" ? $border_radius_custom : 0 ?>px;
 	}
 }
 
@@ -4492,7 +4514,7 @@ ul.comments .comment-block,
 .product-info + .product-info,
 .img-thumbnail.img-thumbnail-hover-icon:before,
 .product-thumb-info {
-	border-radius: 0;
+	border-radius: <?php echo $border_radius == "custom" ? $border_radius_custom : 0 ?>px;
 }
 
 @media (max-width: 479px) {
@@ -4500,7 +4522,7 @@ ul.comments .comment-block,
 	.tabs .nav.nav-tabs.nav-justified li:first-child a:hover,
 	.tabs.tabs-bottom .nav.nav-tabs.nav-justified li:last-child a,
 	.tabs.tabs-bottom .nav.nav-tabs.nav-justified li:last-child a:hover {
-		border-radius: 0;
+		border-radius: <?php echo $border_radius == "custom" ? $border_radius_custom : 0 ?>px;
 	}
 }
 
@@ -4510,7 +4532,7 @@ ul.comments .comment-block,
 	#header.flat-menu nav.mega-menu ul.nav-main li.mega-menu-fullwidth ul.dropdown-menu,
 	#header.flat-menu nav ul.nav-main li a,
 	html.boxed #header.flat-menu .header-top {
-		border-radius: 0;
+		border-radius: <?php echo $border_radius == "custom" ? $border_radius_custom : 0 ?>px;
 	}
 }
 <?php endif ?>

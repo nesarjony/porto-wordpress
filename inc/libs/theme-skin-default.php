@@ -1,18 +1,6 @@
 <?php
 
-	function portoSkinLayoutGenerate()
-	{
-		$skin = array('default');
-		$skinArray = array();
-
-		$skinArray["default"] = ADMIN_URI."/layout/skin/default.png";
-
-		for($i=2;$i <= 8;$i++)
-		{
-			$skinArray["skin".$i] = ADMIN_URI."/layout/skin/Skin ".$i.".png";
-		}
-		return $skinArray;
-	} 
+	
 
     function portoLogoShapeGeneateDefault( $layout,$key )
     {
@@ -128,7 +116,6 @@
     	switch( $skin )  
     	{
     		case 'default': 
-    			$skinOptions['primary'] = "#0088cc";
     			$skinOptions['a_hover'] = "#0099e6";
     			$skinOptions['a_focus'] = "#0099e6";
     			$skinOptions['a_active'] = "#0077b3";

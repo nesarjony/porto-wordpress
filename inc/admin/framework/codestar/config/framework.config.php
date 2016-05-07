@@ -4,14 +4,14 @@
 // FRAMEWORK SETTINGS 
 // -----------------------------------------------------------------------------------------------
 // ===============================================================================================
-$settings      = array(
+$settings      = array( 
   'menu_parent' => 'themes.php',
   'menu_title' => 'Theme Options',
   'menu_type'  => 'add_submenu_page',
   'menu_slug'  => 'porto-options',
 
   'ajax_save'  => true,
-); 
+);  
  
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
@@ -281,7 +281,7 @@ $options[]   = array(
               'topbar_5' => 'Topbar-5 || (Left Big Slogan with a Right Location Info)',
               'topbar_6' => 'Topbar-6 || (Left Info with a Right Search)',
             ),
-          'default'      => portoTopbarGenerateDefault(cs_get_option('header_style')),
+          'default'      => "topbar_1",
           'default_priority' => true,
           'class'        => 'chosen' 
         ),
@@ -880,8 +880,8 @@ $options[]   = array(
 
     // sub section 1
    array(
-      'name'      => 'color-general',
-      'title'     => 'General',
+      'name'      => 'color-global',
+      'title'     => 'Global',
       'icon'      => 'fa fa-check',
       'fields'    => array(
         
@@ -907,12 +907,12 @@ $options[]   = array(
         array(
           'id'      => 'color_primary_default', 
           'type'    => 'color_picker',
-          'title'   => 'Theme Primary Color',
+          'title'   => 'Theme Primary Color', 
           'default' => '#0088cc',
-          'default_priority' => true,  
+          'default_priority' => true,   
           'dependency' => array("skin_default","==",true),
         ),
-        array(
+        array( 
           'id'      => 'color_primary_skin2',
           'type'    => 'color_picker',
           'title'   => 'Theme Primary Color',
@@ -920,7 +920,159 @@ $options[]   = array(
           'default_priority' => true, 
           'dependency' => array("skin_skin2","==",true),
         ),
-      )  
+        array(
+          'id'      => 'color_primary_skin3', 
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color', 
+          'default' => '#ed8446',
+          'default_priority' => true,   
+          'dependency' => array("skin_skin3","==",true),
+        ),
+        array(
+          'id'      => 'color_primary_skin4',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color',
+          'default' => '#395563',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin4","==",true),
+        ),
+        array(
+          'id'      => 'color_primary_skin5', 
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color', 
+          'default' => '#83bfd6',
+          'default_priority' => true,   
+          'dependency' => array("skin_skin5","==",true),
+        ),
+        array(
+          'id'      => 'color_primary_skin6',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color',
+          'default' => '#5974a3',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin6","==",true),
+        ),
+        array(
+          'id'      => 'color_primary_skin7',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color',
+          'default' => '#2aafea',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin7","==",true),
+        ), 
+        array(
+          'id'      => 'color_primary_skin8',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color',
+          'default' => '#f45c57',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin8","==",true),
+        ),
+        array(
+          'id'      => 'color_primary_custom',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Primary Color', 
+          'default_priority' => true, 
+          'dependency' => array("skin_custom","==",true),
+        ), 
+
+        array(
+          'id'      => 'color_link_hover_default', 
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color', 
+          'default' => '#0099e6',
+          'default_priority' => true,   
+          'dependency' => array("skin_default","==",true),
+        ),
+        array( 
+          'id'      => 'color_link_hover_skin2',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color',
+          'default' => '#96c742',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin2","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_skin3', 
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color', 
+          'default' => '#ef935d',
+          'default_priority' => true,   
+          'dependency' => array("skin_skin3","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_skin4',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color',
+          'default' => '#426373',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin4","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_skin5', 
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color', 
+          'default' => '#96c9dc',
+          'default_priority' => true,   
+          'dependency' => array("skin_skin5","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_skin6',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color',
+          'default' => '#6982ad',   
+          'default_priority' => true, 
+          'dependency' => array("skin_skin6","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_skin7',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color',
+          'default' => '#41b8ec',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin7","==",true),
+        ), 
+        array(
+          'id'      => 'color_link_hover_skin8',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color',
+          'default' => '#f6736f',  
+          'default_priority' => true, 
+          'dependency' => array("skin_skin8","==",true),
+        ),
+        array(
+          'id'      => 'color_link_hover_custom',
+          'type'    => 'color_picker',
+          'title'   => 'Theme Link Hover Color', 
+          'dependency' => array("skin_custom","==",true),
+        ),
+        array(
+          'id'        => 'border-shape',
+          'type'      => 'radio',
+          'title'     => 'Border Shape',
+          'options'   => array(
+            'enable'   => 'Enable with default value',
+            'disable'  => 'Disable',
+            'custom'   => 'Eanble With Custom Value',
+          ),
+          'default'   => 'enable',
+        ),
+        array(
+          'id'      => 'border-shape-custom',
+          'type'    => 'text',
+          'title'   => 'Border Shape Cutom Value',
+          'default' => '4',
+          'after'   => '<i> px</i>',  
+          'attributes' => array(
+            'style'    => 'width: 105px; height: 30px; border-color: #93C054;'
+          ),
+          'dependency' => array("border-shape_custom","==",true),
+        ),
+
+
+
+
+      )   
     ),
      // sub section 1
    array(
@@ -937,8 +1089,37 @@ $options[]   = array(
           'id'      => 'color_topbar_bg', 
           'type'    => 'color_picker', 
           'title'   => 'Topbar Background Color',
-          'default' => "dfd",
-          'default_priority' => true,
+        ),
+        array(
+          'id'      => 'color_topbar_color', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Text Color',
+        ),
+        array(
+          'id'      => 'color-topbar-border', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Border Color',
+        ),
+        array(
+          'id'      => 'color-topbar-menu-bg', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Menu Background Color',
+        ),
+
+        array(
+          'id'      => 'color-topbar-menu-text-color', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Menu Text Color',
+        ),
+        array(
+          'id'      => 'color-topbar-menu-bg-hover', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Menu Background Color On Hover',
+        ),
+        array(
+          'id'      => 'color-topbar-menu-border', 
+          'type'    => 'color_picker', 
+          'title'   => 'Topbar Menu Border Color',
         ),
       ) 
     ),

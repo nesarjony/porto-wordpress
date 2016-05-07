@@ -1,7 +1,7 @@
 <?php
 	if($topbar_layout == 'topbar_1'): ?>
 		<nav class="header-nav-top pull-right">
-			<ul class="nav nav-pills">
+			<ul class="nav nav-pills"> 
 				<?php if(cs_get_option('topbar_phone')): ?> 
 				<li class="hidden-xs">
 					<span class="ws-nowrap"><i class="fa fa-phone"></i><?= cs_get_option('topbar_phone') ?></span>
@@ -16,7 +16,7 @@
 				<?php 
  
 					if(cs_get_option('topbar_page')):
-						$id = cs_get_option('topbar_page');
+		 				$id = cs_get_option('topbar_page');
 						$page = get_post($id);
 
 					?>
@@ -35,7 +35,7 @@
 				portoSocialMedia( true );
 			} 
 
-			if(cs_get_option('search_key') && $options['topbar_search'] && $topbar_layout == 'topbar_3'){
+			if(cs_get_option('search_key')  && $topbar_layout == 'topbar_3'){
 				portoSearch();
 			}
 			
@@ -73,7 +73,7 @@
 			?>
 
 		<?php 
-			if(cs_get_option('search_key') && $options['topbar_search']){
+			if(cs_get_option('search_key') ){
 				portoSearch();
 			}
 		?>

@@ -18,6 +18,19 @@
 			return $style; 
 		} 
 
+		function portoSkinLayoutGenerate()
+		{
+			$skinArray = array();
+
+			$skinArray["default"] = ADMIN_URI."/layout/skin/default.png";
+
+			for($i=2;$i <= 8;$i++)
+			{
+				$skinArray["skin".$i] = ADMIN_URI."/layout/skin/Skin ".$i.".png";
+			}
+	        $skinArray['custom'] = ADMIN_URI."/layout/skin/custom.png";
+			return $skinArray;
+		} 
 
 		function portoTopbarLayouts()
 		{
@@ -27,7 +40,7 @@
 			{
 				$layouts['Topbar'.$i] = ADMIN_URI."/layout/topbars/Topbar".$i.".png";
 			}
-			//var_dump($layouts);
+			
 			return $layouts;
 		}
 

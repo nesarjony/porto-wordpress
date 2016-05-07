@@ -44,14 +44,8 @@ add_action( 'wp_enqueue_scripts','porto_style' );
 
 function portoSkinCheck()
 {
-	$skin = cs_get_option('skin');  
-	//$skin = cs_get_option('skin');
-//echo $skin;
-	$primary_color = cs_get_option("color_primary_default");
-	var_dump($primary_color);
-	//$skinOptions = portoSkinGeneateDefault( $skin,false,false );
- 	
-	ob_start();
+	
+	ob_start(); 
   
 	include_once THEME_DIR . '/style.php';
 
