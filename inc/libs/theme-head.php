@@ -137,7 +137,7 @@ if( !function_exists('portoLogo') )
 	}
 }
 
-function portoSocialMedia( $ul_additioal_classes = false )
+function portoSocialMedia( $ul_additioal_classes = false,$count=false )
 {
 	if( $ul_additioal_classes )
 		$classes = "social-icons-transparent social-icons-icon-light pull-right ml-xs mt-xs";
@@ -156,17 +156,20 @@ function portoSocialMedia( $ul_additioal_classes = false )
 		}
 	}
 
+	if(!$count)
+		$count = count($items);
+
 	if($active):
 		echo '<ul class="header-social-icons social-icons '.$classes.'hidden-xs">';
 		$target = cs_get_option('social_new_tab') ? '_blank' : '';		
 
-		foreach($items as $item):
-			if(cs_get_option($item)):
-		  	 	echo '<li class="social-icons-'.$item.'"><a href="';
-		  	 	echo cs_get_option($item);
-		  	    echo '" target="'.$target.'" title="'.ucfirst($item).'"><i class="fa fa-'.$item.'"></i></a></li>';
+		for($i=0;$i<$count;$i++):
+			if(cs_get_option($items[$i])):
+		  	 	echo '<li class="social-icons-'.$items[$i].'"><a href="';
+		  	 	echo cs_get_option($items[$i]);
+		  	    echo '" target="'.$target.'" title="'.ucfirst($items[$i]).'"><i class="fa fa-'.$items[$i].'"></i></a></li>';
 		  	endif;
-		 endforeach;
+		 endfor;
 
 		 echo '</ul>';
 	endif;			

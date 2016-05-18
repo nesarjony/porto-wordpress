@@ -11,7 +11,27 @@
 						<?php $count = isset($grid['offset']) ? count($grid)-1 : count($grid); ?>
 						<?php for($i=0;$i<$count;$i++): ?>
 						<div class="col-md-<?php echo $grid[$i] ?><?php echo $enable_offset && $i == $enable_offset ? ' col-md-offset-'.$grid['offset']:''?>">
-							
+							 <?php 
+							 	$j = $i+1;
+							 	if(is_active_sidebar("footer-area-".$j)):
+
+							 		ob_start();
+							 		 dynamic_sidebar("footer-area-".$j);
+							 		 $output = ob_get_contents();				 		
+							 		ob_end_clean();
+							 		//echo $output;
+							 		$sidebars = wp_get_sidebars_widgets();
+							 		$count = count($sidebars['footer-area-'.$j]);
+
+							 		if($count > 1)
+							 		{
+							 			$search  = "</aside>";
+							 			$replace = '</aside><hr class="light">';
+							 			$output = str_replace($search,$replace,$output);
+							 		}
+							 		echo $output;
+								 endif;
+							 ?>
 						</div>
 						<?php endfor ?>
 					</div>
@@ -19,12 +39,14 @@
 				<div class="footer-copyright">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-1">
-								<?php $image =  wp_get_attachment_image_src(cs_get_option('footer_logo'),'full'); ?>
+							<?php $image =  wp_get_attachment_image_src(cs_get_option('footer_logo'),'full'); ?>
+							<?php if($image): ?>
+							<div class="col-md-1">								
 								<a href="#" class="logo">
 									<img alt="Porto Website Template" class="img-responsive" src="<?php echo $image[0] ?>">
-								</a>
+								</a>							
 							</div>
+							<?php endif ?>
 							<div class="col-md-<?php echo $options['footer_menu_simple'] ? '7':'11'?>">
 								<p><?php echo $options['copyright'] ?></p>
 							</div>

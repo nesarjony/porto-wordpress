@@ -22,6 +22,7 @@ define( 'LIBS_DIR', THEME_DIR. '/inc/libs' );
 define( 'ADMIN_DIR', THEME_DIR. '/inc/admin' );
 define( 'ADMIN_URI', THEME_URI. '/inc/admin' );
 define( 'TEMPLATE_DIR', THEME_DIR. '/templates' );
+define( 'PLUGIN_DIR', THEME_DIR. '/inc/plugins');
 
 # Constant for language directory and theme assets folder
 define( 'LANGUAGE_DIR', THEME_DIR. '/languages' );
@@ -58,7 +59,7 @@ function dis($param)
 	print_r($param);
 	//echo "</pre>";
 	echo "<br>";
-}
+} 
 # Load theme Menus
 require_once LIBS_DIR. '/theme-menus.php';
 
@@ -66,4 +67,14 @@ require_once LIBS_DIR. '/theme-nav-walker.php';
 
 require_once LIBS_DIR. '/theme-menu-layout.php';
 
+// Include Plugins FIle
 
+require_once PLUGIN_DIR. '/plugins.php';
+
+require_once LIBS_DIR. '/sidebars.php';
+
+require_once LIBS_DIR. '/widget-functions.php';
+require_once LIBS_DIR. '/widget-social-icon.php';
+require_once LIBS_DIR. '/widget-text-box.php';
+require_once LIBS_DIR. '/widget-contact-box.php';
+require_once LIBS_DIR. '/widget-footer-menu-narrow.php';

@@ -13,6 +13,7 @@
 ------------------------------------------------------------------------------------------------*/
 register_nav_menu( 'main-menu',            __( 'Main Menu | depth 5 (Header Overlay 1)', 'porto' ) );
 register_nav_menu( 'Secondary',            __( 'Secondary Menu | depth 2 (Header Overlay 1)', 'porto' ) );
+register_nav_menu( 'footer-menu-narrow',           __( 'Footer Narrow Menu | depth 1', 'porto' ) );
 register_nav_menu( 'social-menu-top',      __( 'Social Menu Top | depth 1 (Header Overlay 1)', 'porto' ) );
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +50,19 @@ register_nav_menu( 'social-menu-top',      __( 'Social Menu Top | depth 1 (Heade
  	echo "</nav>";
 							
 								
+ }
+
+ function portoWpFooterMenuNarrow()
+ {
+ 	$args = array(
+ 			'theme_location' => 'footer-menu-narrow',
+ 			'container'		 => 'ul',
+ 			'menu_class'     => 'nav nav-pills',
+ 			'fallback_cv'	 => false,
+ 			'depth'          => 1,
+ 		); 
+
+ 	wp_nav_menu($args);
  }
 
 /*
